@@ -7,7 +7,7 @@ class skeleton {
   
   file { '/etc/skel/.bashrc' :
     ensure  => file,
-    source  => 'puppet:///site/skeleton/bashrc',
+    source  => 'puppet:///skeleton/bashrc',
     owner   => 'root',
     group   => 'root',
     require => File['/etc/skel'],
