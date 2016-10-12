@@ -1,3 +1,3 @@
-class users {
-
+class user::examples {
+  include users
 }
