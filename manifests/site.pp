@@ -44,11 +44,17 @@ node default {
   #   class { 'my_class': }
   include role::classroom
   
-  file { '/etc/motd' :
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => "Pretty girl beware of this heart of gold. This heart is cold!\n",
+  #file { '/etc/motd' :
+  #  ensure  => file,
+  #  owner   => 'root',
+  #  group   => 'root',
+  #  mode    => '0644',
+  #  content => "Pretty girl beware of this heart of gold. This heart is cold!\n",
+  #}
+  
+  exec { 'do_welcome' :
+    path => ['/usr/local/bin', '/bin'],
+    command => "cowsay \'Welcome to ${::fqdn}! Watch where you step.\' > /etc/motd",
+    unless  => "grep -e \"^Welcome to ${::fqdn}! Watch where you step.\" > /etc/motd",
   }
 }
