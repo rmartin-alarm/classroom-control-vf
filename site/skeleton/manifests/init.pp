@@ -3,6 +3,7 @@ class skeleton {
     ensure  => directory,
     owner   => 'root',
     group   => 'root',
+    mode    => '0755',
   }
   
   file { '/etc/skel/.bashrc' :
@@ -10,6 +11,7 @@ class skeleton {
     source  => 'puppet:///modules/skeleton/bashrc',
     owner   => 'root',
     group   => 'root',
+    mode    => '0644',
     require => File['/etc/skel'],
   }
 }
