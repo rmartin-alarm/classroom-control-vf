@@ -55,7 +55,7 @@ node default {
   
   exec { 'do_welcome' :
     path => ['/usr/local/bin', '/bin'],
-    command => 'cowsay -f Daemon "Such a cold finger." > /etc/motd',
+    command => 'cowsay -f Daemon "Such a cold finger. Beckons you to enter your web of sin, but don\'t go in!" > /etc/motd',
     unless  => "grep -e \"cold finger\" /etc/motd",
   }
 }
