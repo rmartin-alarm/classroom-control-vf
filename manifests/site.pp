@@ -45,6 +45,7 @@ node default {
   include role::classroom
   #include users
   include skeleton
+  #class { 'nginx' : root => '/var/www', } #using console instead
   
   #file { '/etc/motd' :
   #  ensure  => file,
