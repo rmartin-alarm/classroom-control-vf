@@ -4,10 +4,10 @@ class users::admins {
     gname => 'admins',
   }
   users::managed_user { 'chen':
-    gname => 'plebs',
+    gname => 'admins',
   }
   
-  group { ['plebs','admins'] :
+  group { 'admins' :
     ensure  => present,
   }
 }
