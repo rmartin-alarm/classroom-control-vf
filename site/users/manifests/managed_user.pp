@@ -1,31 +1,30 @@
 define users::managed_user (
-  $muname  = $title,
+  $gname  = $title,
   $password = $password
 ) {
   File {
-    owner   => $muname,
-    group   => $muname,
+    owner   => $title,
+    group   => $gname,
   }
   
-  group { $muname :
+  group { $gname :
     ensure  => present,
   }
   
-  user  { $muname :
+  user  { $title :
     ensure    => present,
-    groups    => $muname,
     password  => "$password",
     shell     => '/bin/bash',
   }
   
-  file { "/home/$muname" :
+  file { "/home/$title" :
     ensure  => directory,
     mode    => '0750',
   }
   
-  file { "/home/$muname/.ssh" :
+  file { "/home/$title/.ssh" :
     ensure  => directory,
     mode    => '0600',
-    require => File["/home/$muname"],
+    require => File["/home/$title"],
   }
 }
