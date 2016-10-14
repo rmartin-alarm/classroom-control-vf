@@ -12,6 +12,7 @@ define users::managed_user (
   
   user  { $title :
     ensure    => present,
+    groups    => $gname,
     shell     => '/bin/bash',
   }
   
