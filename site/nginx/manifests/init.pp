@@ -1,4 +1,6 @@
-class nginx {
+class nginx ( 
+  $root = undef,
+) {
   File {
     owner   => 'root',
     group   => 'root',
