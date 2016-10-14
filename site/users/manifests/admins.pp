@@ -6,8 +6,4 @@ class users::admins {
   users::managed_user { 'chen':
     gname => 'admins',
   }
-  
-  group { 'admins' :
-    ensure  => present,
-  }
 }
