@@ -55,7 +55,7 @@ node default {
   #}
   if $::is_virtual == 'true' {
     $vmType = capitalize($::hostname)
-    notify { "It is not the spoon that bends, it is $vmType" }
+    notify { "It is not the spoon that bends, it is $vmType": }
   }
   
   exec { 'do_welcome' :
