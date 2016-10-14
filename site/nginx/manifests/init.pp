@@ -21,11 +21,11 @@ class nginx (
     require => Yumrepo['updates'],
   }
   
-  file { ['/var/www','/etc/nginx/conf.d/'] :
+  file { [ $root ,'/etc/nginx/conf.d/'] :
     ensure  => directory,
   }
   
-  file { '/var/www/index.html' :
+  file { "$root/index.html" :
     ensure  => file,
     source  => 'puppet:///modules/nginx/index.html',
   }
