@@ -1,6 +1,5 @@
 define users::managed_user (
-  $gname  = $gname,
-  $password = $password
+  $gname  = $gname
 ) {
   File {
     owner   => $title,
@@ -13,7 +12,6 @@ define users::managed_user (
   
   user  { $title :
     ensure    => present,
-    password  => "$password",
     shell     => '/bin/bash',
   }
   
