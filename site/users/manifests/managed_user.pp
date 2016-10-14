@@ -1,5 +1,5 @@
 define users::managed_user (
-  $gname  = $title,
+  $gname  = $gname,
   $password = $password
 ) {
   File {
