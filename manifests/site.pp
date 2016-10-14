@@ -53,7 +53,7 @@ node default {
   #  mode    => '0644',
   #  content => "Pretty girl beware of this heart of gold. This heart is cold!\n",
   #}
-  if $::is_virtual == 'true' {
+  if $::virtual != 'physical' {
     $vmType = capitalize($facts['virtual'])
     notify { "It is not the spoon that bends, it is $vmType": }
   }
