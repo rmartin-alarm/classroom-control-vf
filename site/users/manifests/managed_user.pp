@@ -1,5 +1,5 @@
 define users::managed_user (
-  $gname  = $gname
+  $gname  = $title
 ) {
   File {
     owner   => $title,
